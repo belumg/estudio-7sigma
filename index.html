@@ -8,21 +8,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --crimson:    #C0112A;
-    --deep-red:   #7A0018;
-    --turquoise:  #00C9B1;
-    --cyan-light: #7FFFD4;
-    --dark-water: #003D3A;
-    --sand:       #D4A96A;
-    --ink:        #0A0A0A;
-    --paper:      #F5F0E8;
+    --navy:          #0B1628;
+    --navy-mid:      #112240;
+    --silver:        #C8D4E0;
+    --silver-bright: #E8EEF4;
+    --teal:          #1DD6BE;
+    --teal-dim:      #0FA090;
+    --ink:           #0B1628;
+    --paper:         #FFFFFF;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--ink);
+    background: var(--navy);
     color: var(--paper);
     font-family: 'Cormorant Garamond', serif;
     overflow: hidden;
@@ -33,7 +33,7 @@
   /* ── CURSOR ── */
   .cursor {
     width: 12px; height: 12px;
-    background: var(--turquoise);
+    background: var(--teal);
     border-radius: 50%;
     position: fixed; top: 0; left: 0;
     pointer-events: none; z-index: 9999;
@@ -43,7 +43,7 @@
   }
   .cursor-ring {
     width: 36px; height: 36px;
-    border: 1px solid var(--turquoise);
+    border: 1px solid var(--teal);
     border-radius: 50%;
     position: fixed; top: 0; left: 0;
     pointer-events: none; z-index: 9998;
@@ -76,14 +76,14 @@
   }
   .nav-logo::after {
     content: ''; display: block;
-    height: 2px; background: var(--turquoise);
+    height: 2px; background: var(--teal);
     width: 0; transition: width .4s ease;
   }
   .nav-logo:hover::after { width: 100%; }
   .nav-tag {
     font-family: 'Space Mono', monospace;
     font-size: .65rem; letter-spacing: .25em;
-    color: var(--turquoise); opacity: .7;
+    color: var(--teal); opacity: .7;
   }
 
   /* ── ESCENA CENTRAL ── */
@@ -99,7 +99,7 @@
   .eyebrow {
     font-family: 'Space Mono', monospace;
     font-size: .65rem; letter-spacing: .35em;
-    color: var(--turquoise);
+    color: var(--teal);
     opacity: 0;
     animation: fadeUp 1s ease .4s forwards;
     margin-bottom: 1.4rem;
@@ -116,18 +116,18 @@
   .main-title .outline-crimson {
     display: block;
     color: transparent;
-    -webkit-text-stroke: 1px var(--crimson);
+    -webkit-text-stroke: 1px var(--silver);
   }
   .main-title .outline-teal {
     display: block;
     color: transparent;
-    -webkit-text-stroke: 1px var(--turquoise);
+    -webkit-text-stroke: 1px var(--teal);
   }
 
   .subtitle {
     max-width: 420px;
     font-size: 1.1rem; font-weight: 300; font-style: italic;
-    line-height: 1.7; color: rgba(245,240,232,.7);
+    line-height: 1.7; color: rgba(200,212,224,.8);
     margin-top: 2rem;
     opacity: 0;
     animation: fadeUp 1s ease .9s forwards;
@@ -151,7 +151,7 @@
   .side-line::after {
     content: ''; display: block;
     width: 1px; height: 80px;
-    background: linear-gradient(to bottom, var(--crimson), transparent);
+    background: linear-gradient(to bottom, var(--silver), transparent);
   }
 
   /* ── BARRA INFERIOR ── */
@@ -160,9 +160,9 @@
     z-index: 100;
     padding: 1.5rem 3rem;
     display: flex; justify-content: space-between; align-items: center;
-    background: rgba(10,10,10,.6);
+    background: rgba(11,22,40,.8);
     backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(245,240,232,.05);
+    border-top: 1px solid rgba(29,214,190,.12);
     opacity: 0;
     animation: fadeUp 1s ease 1.2s forwards;
   }
@@ -174,7 +174,7 @@
   .bottom-bar a {
     font-family: 'Space Mono', monospace;
     font-size: .6rem; letter-spacing: .18em;
-    color: var(--turquoise); opacity: .6;
+    color: var(--teal); opacity: .6;
     text-decoration: none; transition: opacity .3s;
   }
   .bottom-bar a:hover { opacity: 1; }
@@ -263,12 +263,12 @@ document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; })
   const phase = new Float32Array(COUNT);
 
   const palette = [
-    [0.75, 0.07, 0.17],
-    [0.48, 0.00, 0.09],
-    [0.00, 0.79, 0.69],
-    [0.50, 1.00, 0.83],
-    [0.00, 0.24, 0.23],
-    [0.83, 0.66, 0.42],
+    [0.11, 0.84, 0.75],
+    [0.06, 0.63, 0.56],
+    [0.78, 0.83, 0.88],
+    [0.91, 0.93, 0.96],
+    [0.07, 0.13, 0.25],
+    [0.11, 0.20, 0.38],
   ];
 
   for (let i = 0; i < COUNT; i++) {
